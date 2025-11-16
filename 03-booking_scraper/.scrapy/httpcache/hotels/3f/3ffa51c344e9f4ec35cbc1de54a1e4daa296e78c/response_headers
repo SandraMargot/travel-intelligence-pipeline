@@ -1,0 +1,17 @@
+Content-Length: 4068
+Content-Type: text/html
+Server: nginx
+Date: Sat, 20 Sep 2025 16:43:09 GMT
+Set-Cookie: _implmdnbl=2__1__0; path=/; expires=Mon, 21-Sep-2020 16:43:09 GMT; HttpOnly
+Set-Cookie: bkng=11UmFuZG9tSVYkc2RlIyh9Yaa29%2F3xUOLbof7CEiNviT%2BvQ2KD1rJTlbRK%2FGgNVkQwuodojJtIMlyuBn9zejwT%2BCcMi1IBXlVh1Aa3l0hGG5kq84O%2B0OCIHaattaAcHB1U11ba%2Fs1dYsUb22dGhtP3IYV6aIn5uSJx3U2uBG%2B1oRyE%2Bh%2F1tL0b8WhYFmspmKUvLdSWlBoiLZI%3D; domain=.booking.com; path=/; expires=Thu, 19-Sep-2030 16:43:09 GMT; Secure; HTTPOnly; SameSite=None
+Set-Cookie: bkng_sso_auth=CAIQm8CWywYaZojY7SdqiY0biaBPBhqdBZw/dk4pkgZLROfA4LIuithED9Y54t5YAjtWsC1kTP1FGIbDjH8A44qiMKkNj0qrDgF8hWNwByKuWduoQDgAPN+eQxgUW3ciPGvwngfmohDxH0WqThCK9w==; Domain=.booking.com; Path=/; Expires=Mon, 20 Sep 2027 16:43:09 GMT; HttpOnly; Secure; SameSite=Lax
+Set-Cookie: pcm_consent=analytical%3Dfalse%26countryCode%3DFR%26consentId%3Dad0ae0d8-d73c-4b5e-a92a-3307a6902805%26consentedAt%3D2025-09-20T16%3A43%3A09.931Z%26expiresAt%3D2026-03-19T16%3A43%3A09.931Z%26implicit%3Dtrue%26marketing%3Dfalse%26regionCode%3DPAC%26regulation%3Dgdpr%26legacyRegulation%3Dgdpr; Domain=.booking.com; Path=/; Expires=Sun, 20 Sep 2026 16:43:09 GMT; HttpOnly; Secure; SameSite=Lax
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+Content-Security-Policy-Report-Only: frame-ancestors 'none'; report-uri https://nellie.booking.com/csp-report-uri?type=report&tag=112&pid=e26e758e0f180153&e=UmFuZG9tSVYkc2RlIyh9YXZqW3zWGZ0-0WRWNuR2jaaAL-ohLQJ09BIZW0mIXsxuBmk1stWZym6CoYiaZw7BH5c2UtLNKlZD
+X-Xss-Protection: 1; mode=block
+X-Cache: Miss from cloudfront
+Via: 1.1 9c8fea304cc4dc64f018a09a43cea24a.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: CDG50-P1
+X-Amz-Cf-Id: wpSBQWVd3k3oUCBZmdGHtWQGg8ggni2Fl5LvLHEyLM42XS8yVREWEA==
+Accept-Ch: ECT
+Server-Timing: cdn-upstream-layer;desc="REC",cdn-upstream-dns;dur=0,cdn-upstream-connect;dur=0,cdn-upstream-fbl;dur=56,cdn-cache-miss,cdn-pop;desc="CDG50-P1",cdn-rid;desc="wpSBQWVd3k3oUCBZmdGHtWQGg8ggni2Fl5LvLHEyLM42XS8yVREWEA==",cdn-downstream-fbl;dur=83
