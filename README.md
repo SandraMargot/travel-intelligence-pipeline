@@ -1,4 +1,7 @@
-# Data-Driven Destination Recommender
+# Kayak - A data-driven holiday destination recommender
+A data science project for Jedha
+
+## Overview
 This project builds a simple, data-powered engine to help travellers choose the best French destinations based on real weather forecasts and hotel quality.
 ---
 ## What it does
@@ -33,22 +36,22 @@ Booking.com
 5. Build maps with Plotly
 ---
 ## Tech Stack
-Python (pandas, scrapy, requests)  
-APIs: Nominatim, OpenWeather  
-AWS S3 : datalake
-RDS : datawarehouse in PostgreSQL (SQL : staging, dim_site, fact_hotel)
-Plotly  
+- Python (pandas, scrapy, requests)  
+- APIs: Nominatim, OpenWeather  
+- AWS S3 : datalake
+- RDS : datawarehouse in PostgreSQL (SQL : staging, dim_site, fact_hotel)
+- Plotly  
 ---
 ## 📁 Key Files
-- 01-Kayak-API-GPS.ipynb — city coordinates  
-- Project2-Kayak-API-Weather.ipynb — weather + scores  
-- scraping_booking_hotels.py — hotel scraper  
-- Kayak-merge_and_clean.ipynb — final dataset  
-- queries.sql — S3 → RDS loading  
-- Hotels_map.ipynb — visualisations
+- 01-Kayak-API-GPS.ipynb : city coordinates  
+- Project2-Kayak-API-Weather.ipynb : weather + scores  
+- scraping_booking_hotels.py : hotel scraper  
+- Kayak-merge_and_clean.ipynb : final dataset  
+- queries.sql : S3 → RDS loading  
+- Hotels_map.ipynb : visualisations
 ---
 ## Secrets
 1. Copy .env.example to .env
-2. Edit .env and fill in your own values
+2. Edit .env by filling in your own values
 3. Open the project folder in VS Code
 4. Open any notebook and run it
