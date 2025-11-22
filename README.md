@@ -3,7 +3,7 @@ A data science project for Jedha
 
 ## Overview
 This project builds a simple, data-powered engine to help travellers choose the best French destinations based on real weather forecasts and hotel quality.
----
+
 ## What it does
 - Identifies the top French destinations for the next 7 days  
 - Selects the best hotels in each area  
