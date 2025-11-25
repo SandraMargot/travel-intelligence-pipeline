@@ -43,12 +43,14 @@ Booking.com
 - Plotly  
 ---
 ## 📁 Key Files
-- 01-Kayak-API-GPS.ipynb : city coordinates  
-- Project2-Kayak-API-Weather.ipynb : weather + scores  
-- scraping_booking_hotels.py : hotel scraper  
-- Kayak-merge_and_clean.ipynb : final dataset  
-- queries.sql : S3 → RDS loading  
-- Hotels_map.ipynb : visualisations
+- city coordinates : 01-Kayak-API-GPS.ipynb
+- weather + scores : Project2-Kayak-API-Weather.ipynb
+- hotel scraper : scraping_booking_hotels.py  
+- creation final dataset : Kayak-merge_and_clean.ipynb
+- AWS S3 bucket : Snapshot AWS - S3.png
+- AWS RDS db : Snapshot AWS - RDS.png
+- S3 → RDS loading : queries.sql
+- maps : Hotels_map.ipynb
 ---
 ## Secrets
 1. Copy .env.example to .env
