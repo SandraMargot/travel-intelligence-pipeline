@@ -43,7 +43,7 @@ Data is collected from publicly available web pages for prototyping purposes.
 
 ## Architecture
 
-![Architecture](Architecture.png)
+<img src="Architecture.png" width="400">
 
 1. Data ingestion (geolocation, weather API, web data extraction)  
 2. Data cleaning and feature engineering  
