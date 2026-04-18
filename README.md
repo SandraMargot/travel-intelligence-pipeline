@@ -41,7 +41,9 @@ Data is collected from publicly available web pages for prototyping purposes.
 
 ---
 
-## Pipeline Architecture
+## Architecture
+
+![Architecture](Architecture.png)
 
 1. Data ingestion (geolocation, weather API, web data extraction)  
 2. Data cleaning and feature engineering  
@@ -71,11 +73,26 @@ Data is collected from publicly available web pages for prototyping purposes.
 
 ---
 
-## Example Output
-- Ranked list of destinations based on computed score  
-- Map visualization highlighting top destinations  
-- Dataset ready for downstream usage (BI / API / dashboard)  
+## Scoring Logic
 
+The destination score is computed using a combination of:
+- Temperature (comfort range)
+- Weather conditions (rainfall, variability)
+- Aggregated accommodation quality indicators
+
+The scoring approach is heuristic-based and designed to remain interpretable and easily adjustable.
+
+---
+
+## Example Outputs
+- Ranked list of destinations based on computed score 
+- Dataset ready for downstream usage (BI / API / dashboard)
+- Map visualization highlighting top destinations :  
+### Top Destinations
+![Top destinations](04-Maps/Top%205%20destinations.png)
+
+### Top Hotels
+![Top hotels](04-Maps/Top%20hotels%20in%20the%20area.png)
 ---
 
 ## Limitations

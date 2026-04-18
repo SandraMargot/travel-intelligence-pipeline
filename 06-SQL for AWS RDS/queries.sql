@@ -1,7 +1,9 @@
 CREATE SCHEMA IF NOT EXISTS stg;
 CREATE SCHEMA IF NOT EXISTS dwh;
 
-CREATE TABLE stg.kayak_final_raw (
+DROP TABLE IF EXISTS stg.travel_intelligence_raw;
+
+CREATE TABLE stg.travel_intelligence_raw (
     site_id           text,
     destination       text,
     name              text,
@@ -19,22 +21,19 @@ CREATE TABLE stg.kayak_final_raw (
     nice_score        text
 );
 
+-- Example import from S3 (credentials should be managed securely outside the SQL script)
 SELECT aws_s3.table_import_from_s3(
-    'stg.kayak_final_raw',
-    '',  -- toutes les colonnes, dans l'ordre de la table
+    'stg.travel_intelligence_raw',
+    '',
     '(FORMAT csv, HEADER true)',
     aws_commons.create_s3_uri(
-        'jedha-kayak-sandra-margot',  -- bucket
-        'Kayak_final.csv',            -- objet dans le bucket
-        'eu-north-1'                  -- région
-    ),
-    aws_commons.create_aws_credentials(
-        'KEY',
-        'TOKEN',
-        ''  -- session token (vide si non utilisé)
+        'your-bucket-name',
+        'travel_intelligence_final.csv',
+        'your-region'
     )
 );
 
+DROP TABLE IF EXISTS dwh.fact_hotel;
 DROP TABLE IF EXISTS dwh.dim_site;
 
 CREATE TABLE dwh.dim_site (
@@ -56,18 +55,16 @@ INSERT INTO dwh.dim_site (
     expected_rain_mm,
     nice_score
 )
-SELECT DISTINCT
+SELECT
     site_id::integer,
-    destination AS site_name,
-    lat_site::double precision,
-    lon_site::double precision,
-    avg_temp_c::double precision,
-    expected_rain_mm::double precision,
-    nice_score::double precision
-FROM stg.kayak_final_raw;
-
-
-DROP TABLE IF EXISTS dwh.fact_hotel;
+    MIN(destination) AS site_name,
+    MIN(lat_site::double precision) AS lat_site,
+    MIN(lon_site::double precision) AS lon_site,
+    MIN(avg_temp_c::double precision) AS avg_temp_c,
+    MIN(expected_rain_mm::double precision) AS expected_rain_mm,
+    MIN(nice_score::double precision) AS nice_score
+FROM stg.travel_intelligence_raw
+GROUP BY site_id::integer;
 
 CREATE TABLE dwh.fact_hotel (
     hotel_sk     bigserial PRIMARY KEY,
@@ -102,12 +99,12 @@ SELECT
     lat_hotel::double precision,
     lon_hotel::double precision,
     url,
-    review_score::numeric,
+    review_score::numeric(3,1),
     description,
     address
-FROM stg.kayak_final_raw;
+FROM stg.travel_intelligence_raw;
 
-Voir quelques lignes:
+-- Sample check
 SELECT *
 FROM dwh.fact_hotel
 LIMIT 10;
