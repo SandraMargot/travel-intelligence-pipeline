@@ -1,59 +1,89 @@
-# Kayak - A data-driven holiday destination recommender
-A data science project for Jedha
+# Travel Intelligence Pipeline
+
+End-to-end data pipeline to rank travel destinations using weather indicators and accommodation-related signals.
+
+---
 
 ## Overview
-This project builds a simple, data-powered engine to help travellers choose the best French destinations based on real weather forecasts and hotel quality.
+This project implements a data pipeline that aggregates weather data and accommodation-related signals to compute and rank destination attractiveness.
 
-## What it does
-- Identifies the top French destinations for the next 7 days  
-- Selects the best hotels in each area  
-- Generates two interactive Plotly maps:  
-  - Top-5 destinations  
-  - Top-20 hotels  
-All insights come from real APIs and real scraping.
+It is designed as a prototype for travel analytics use cases such as content recommendation, destination ranking, or marketing prioritization.
+
 ---
-## Data Used
+
+## Key Capabilities
+- Collect and integrate heterogeneous data sources (weather APIs, geolocation, web data)
+- Compute a destination-level scoring based on multiple signals
+- Rank destinations according to computed attractiveness
+- Generate visual outputs for exploration and comparison
+
+---
+
+## Data Sources
+
 ### Cities
 35 major French destinations  
-GPS from the Nominatim API.
+GPS coordinates retrieved via the Nominatim API.
+
 ### Weather (API)
 OpenWeather One Call API  
 - Temperature  
 - Expected rainfall  
 - Custom “nice weather” score  
-### Hotels (Scraping)
-Booking.com  
+
+### Accommodation Data (Web Extraction)
 - Hotel name  
 - GPS coordinates  
 - Review score  
 - Description + address  
+
+Data is collected from publicly available web pages for prototyping purposes.
+
 ---
-## Pipeline (Simplified)
-1. GPS → Weather → Hotels  
-2. Clean & merge into final enriched CSV  
-3. Store in AWS S3 (Data Lake)  
-4. Load into AWS RDS PostgreSQL (Data Warehouse)  
-5. Build maps with Plotly
+
+## Pipeline Architecture
+
+1. Data ingestion (geolocation, weather API, web data extraction)  
+2. Data cleaning and feature engineering  
+3. Aggregation at destination level  
+4. Storage in AWS S3 (data lake)  
+5. Loading into PostgreSQL (analytical layer)  
+6. Visualization and ranking outputs  
+
 ---
+
 ## Tech Stack
 - Python (pandas, scrapy, requests)  
 - APIs: Nominatim, OpenWeather  
-- AWS S3 : datalake
-- RDS : datawarehouse in PostgreSQL (SQL : staging, dim_site, fact_hotel)
+- AWS S3 (data lake)  
+- AWS RDS PostgreSQL (analytical storage)  
 - Plotly  
+
 ---
-## 📁 Key Files
-- city coordinates : 01-Kayak-API-GPS.ipynb
-- weather + scores : Project2-Kayak-API-Weather.ipynb
-- hotel scraper : scraping_booking_hotels.py  
-- creation final dataset : Kayak-merge_and_clean.ipynb
-- AWS S3 bucket : Snapshot AWS - S3.png
-- AWS RDS db : Snapshot AWS - RDS.png
-- S3 → RDS loading : queries.sql
-- maps : Hotels_map.ipynb
+
+## Project Structure
+- Geolocation ingestion notebook  
+- Weather data processing and scoring  
+- Web scraping module (accommodation data)  
+- Data merging and cleaning  
+- SQL loading scripts  
+- Visualization notebooks  
+
 ---
-## Secrets
-1. Copy .env.example to .env
-2. Edit .env by filling in your own values
-3. Open the project folder in VS Code
-4. Open any notebook and run it
+
+## Example Output
+- Ranked list of destinations based on computed score  
+- Map visualization highlighting top destinations  
+- Dataset ready for downstream usage (BI / API / dashboard)  
+
+---
+
+## Limitations
+- Prototype project (non-production data reliability)  
+- Limited coverage of accommodation sources  
+- Heuristic scoring approach (non machine learning-based)  
+
+---
+
+## Context
+This project is a portfolio prototype designed to illustrate how data pipelines can support travel-related decision-making through aggregation, scoring, and visualization.
